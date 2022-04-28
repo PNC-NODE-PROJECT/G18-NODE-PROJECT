@@ -1,36 +1,14 @@
-const express = require("express");
-var cors = require("cors");
+require("dotenv").config();
+
+const express = require("express")
 const app = express();
-app.use(cors());
+const fs = require("express");
+const PORT = process.env.PORT || 3000
+
 app.use(express.json());
 
-app.listen(5000,()=>{
-    console.log("Qiuz App run on http://localhost:5000");
-})
+app.listen(PORT, () => console.log("Quiz app is running on port: " + PORT))
 
-//import model
-const taskModel = require('./route/quiz_route');
-
-//Definestatic route
-app.use(express.static('public'));
-
-
-// read 
-app.get('/user',(req,res)=>{
-    
-})
-
-// post 
-app.post('/user',(req,res)=>{
-
-})
-
-// delete
-app.delete('/user',(req,res)=>{
-
-})
-
-// update quiz app
-app.patch('/user',(req,res)=>{
-
-})
+// Router------------------------
+const itemRouter = require("../routes/quiz_route.js");
+app.use("/api/items", itemRouter);
