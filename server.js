@@ -10,5 +10,5 @@ app.use(express.json());
 app.listen(PORT, () => console.log("Quiz app is running on port: " + PORT))
 
 // Router------------------------
-const itemRouter = require("../routes/quiz_route.js");
+const itemRouter = require("./routes/quiz_route.js");
 app.use("/api/items", itemRouter);

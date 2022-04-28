@@ -1,24 +1,109 @@
-.container{
+.container {
     display: flex;
     justify-content: center;
     margin: 80px;
 }
-.contain1{
+#start:hover(){
+    top: 40%;
+    background-color: blue;
+    color: #fff;
+    border: none;
+}
+#create:hover(){
+    top: 40%;
+    background-color: blue;
+    color: #fff;
+    border: none;
+}
+
+.contain1 {
     justify-content: center;
     margin-top: 200px;
     width: 80%;
     margin: auto;
 
 }
-.card{
+.question{
+    display: flex;
+    justify-content: center;
+}
+.edit-delete{
+    margin-left: 32px;
+}
+
+.card {
     width: 50%;
     height: 30vh;
     box-shadow: 1px 2px 8px 2px #aaaa;
 }
-.card-body{
-    width: 50%;
 
+.card-body {
+    width: 60%;
     text-align: center;
     box-shadow: 1px 2px 8px 2px #aaaa;
     margin: 20px auto;
+}
+
+#btn-submit {
+    position: relative;
+    left: 230px;
+}
+#btn-next:hover(){
+    top: 40%;
+    background-color: blue;
+    color: #fff;
+    border: none;
+}
+
+.card-create {
+    width: 50%;
+    height: 40vh;
+    text-align: center;
+    box-shadow: 1px 2px 8px 2px #aaaa;
+    margin: 20px auto;
+    padding-top: 12px;
+}
+
+.card-create1 {
+    width: 50%;
+    text-align: center;
+    box-shadow: 1px 2px 8px 2px #aaaa;
+    margin: 20px auto;
+    padding-top: 12px;
+    height: 48vh;
+}
+
+input {
+    margin-top: 12px;
+}
+
+#btn-add {
+    position: relative;
+    left: 230px;
+}
+
+#btn-add:hover(){
+    top: 20%;
+    background-color: blue;
+    color: #fff;
+    border: none;
+}
+.back-add{
+    text-align: center;
+    margin-right: 150px;
+}
+.contain2{
+    padding-top: 18px;
+}
+#back{
+    position: relative;
+    right:150px ;
+}
+.contain3{
+    width: 30%;
+    text-align: center;
+    box-shadow: 1px 2px 8px 2px #aaaa;
+    margin: 20px auto;
+    padding-top: 12px;
+    height: 32vh;
 }

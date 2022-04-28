@@ -45,7 +45,7 @@ router.delete("/:id", (req, res) => {
     } else {
         res.status(404).send({ "message": "Not found of item." });
     }
-    writeFile("app_quiz.json", quizes_app);
+    writeFile("./data/app_quiz.json", quizes_app);
 })
 
 // Get items to update-------------------------------------------
@@ -64,6 +64,7 @@ router.patch("/:id", (req, res) => {
     } else {
         res.status(404).send({ "message": "Not found of item." });
     }
+    writeFile("app_quiz.json", quizes_app);
 })
 
 module.exports = router;
