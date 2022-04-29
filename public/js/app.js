@@ -1,6 +1,5 @@
 let url = 'http://localhost:3000';
 
-
 function display(){
     hide(container);
     hide(displayQuestion);
@@ -22,7 +21,10 @@ function startQiuz(){
     hide(createQuestion);
     hide(container);
     hide(container3);
-
+    axios.get("/api/items/").then((result)=>{
+        console.log(result.data);
+    })
+    
 }
 function hide(element){
     element.style.display ="none";
@@ -60,15 +62,15 @@ let container3 = document.querySelector(".contain3");
 let subQuiz = document.querySelector("#submitQuiz");
 
 
-let btn_start = document.querySelector("#start");
-btn_start.addEventListener("click",startQiuz);
-let btn_create = document.querySelector("#create");
-btn_create.addEventListener("click",display);
-let backTostartQiuz = document.querySelector('#btn-back');
-backTostartQiuz.addEventListener('click',showBack);
-let submit = document.querySelector('#btn-submit');
-submit.addEventListener('click',submitQuiz);
-let back = document.querySelector('#back');
-back.addEventListener('click',showBack);
-let add = document.querySelector('#btn-add');
-add.addEventListener('click',addQuestion);
+// let btn_start = document.querySelector("#start");
+// btn_start.addEventListener("click",startQiuz);
+// let btn_create = document.querySelector("#create");
+// btn_create.addEventListener("click",display);
+// let backTostartQiuz = document.querySelector('#btn-back');
+// backTostartQiuz.addEventListener('click',showBack);
+// let submit = document.querySelector('#btn-submit');
+// submit.addEventListener('click',submitQuiz);
+// let back = document.querySelector('#back');
+// back.addEventListener('click',showBack);
+// let add = document.querySelector('#btn-add');
+// add.addEventListener('click',addQuestion);

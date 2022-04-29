@@ -1,9 +1,20 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 .container {
     display: flex;
     justify-content: center;
     margin: 80px;
+    height: 220px;
 }
-#start:hover(){
+.container .card{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+/* #start:hover(){
     top: 40%;
     background-color: blue;
     color: #fff;
@@ -14,13 +25,14 @@
     background-color: blue;
     color: #fff;
     border: none;
-}
+} */
 
-.contain1 {
-    justify-content: center;
-    margin-top: 200px;
-    width: 80%;
-    margin: auto;
+.container-fluid {
+    width: 60%;
+    margin: 50px auto;
+    padding: 10px 12px;
+    background: rgba(186, 180, 180, 0.39);
+    border-radius: 4px;
 
 }
 .question{
@@ -31,31 +43,41 @@
     margin-left: 32px;
 }
 
-.card {
-    width: 50%;
-    height: 30vh;
-    box-shadow: 1px 2px 8px 2px #aaaa;
+.container-fluid  .card-question {
+    width: 80%;
+    margin: auto;
 }
-
-.card-body {
-    width: 60%;
+/* .container-fluid  .card-question .card{
+    background: #000;
+    box-sizing: border-box;
+} */
+.container-fluid  .card-question .card .card-header{
+    width: 100%;
     text-align: center;
-    box-shadow: 1px 2px 8px 2px #aaaa;
-    margin: 20px auto;
+    /* box-shadow: 1px 2px 8px 2px #aaaa; */
+    margin: auto;
+    /* background: rgb(4, 121, 211); */
+    color: #fff;
+    background: rgb(25, 96, 219);
 }
 
 #btn-submit {
-    position: relative;
-    left: 230px;
+    /* position: relative;
+    right: 0px; */
+    margin-left: 60px;
 }
-#btn-next:hover(){
+.container-fluid  .card-question .card  .form-control{
+    width: auto;
+
+}
+/* #btn-next:hover(){
     top: 40%;
     background-color: blue;
     color: #fff;
     border: none;
-}
+}  */
 
-.card-create {
+/* .card-create {
     width: 50%;
     height: 40vh;
     text-align: center;
@@ -71,8 +93,8 @@
     margin: 20px auto;
     padding-top: 12px;
     height: 48vh;
-}
-
+} */
+/* 
 input {
     margin-top: 12px;
 }
@@ -94,16 +116,16 @@ input {
 }
 .contain2{
     padding-top: 18px;
-}
-#back{
+} */
+/* #back{
     position: relative;
     right:150px ;
-}
-.contain3{
+} */
+/* .contain3{
     width: 30%;
     text-align: center;
     box-shadow: 1px 2px 8px 2px #aaaa;
     margin: 20px auto;
     padding-top: 12px;
     height: 32vh;
-}
+} */

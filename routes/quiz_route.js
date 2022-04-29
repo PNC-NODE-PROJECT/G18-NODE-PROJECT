@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
     res.send(quizes_app);
 })
 
-// 
+// create question 
 router.post("/", (req, res) => {
     let quizes_app = readFile("app_quiz.json");
     let questions = req.body.question;
@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
     }
 })
 
-// Delete all items-------------------------------------------------
+// Delete question-------------------------------------------------
 router.delete("/:id", (req, res) => {
     let quizes_app = readFile("app_quiz.json");
     let id = req.params.id

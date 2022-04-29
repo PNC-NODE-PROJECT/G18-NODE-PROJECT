@@ -7,88 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QIUZ APP</title>
     <link rel="stylesheet" href="css/style.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="container" id="container">
-        <div class="card">
+    <div class="container w-50" id="container">
+        <div class="card w-75">
             <h1 class="text-center">QUIZ APP</h1>
             <div class="text-center">
-                <button class="btn btn-primary" id="start">START</button>
-                <button class="btn btn-primary" id="create">CREATE</button>
+                <a href="views/playQuiz/play.html"  class="btn btn-primary" id="start">START</a >
+                <a href="views/updateQuiz/edit.html" class="btn btn-primary" id="create">CREATE</a >
             </div>
         </div>
-    </div>
-    <div class="contain1" style="display: none;">
-        <div class="text-center">
-            <div class="card-body">
-                <h1>1. How many color of flage? <span>2pt</span></h1>
-                <input type="radio" id="color1" name="color" value="5">
-                <label for="color1">2</label><br>
-                <input type="radio" id="color2" name="color" value="5">
-                <label for="color2">3</label><br>
-                <input type="radio" id="color3" name="color" value="5">
-                <label for="color3">4</label><br>
-                <input type="radio" id="color4" name="color" value="5">
-                <label for="color4">5</label><br>
-            </div>
-        </div>
-        <div class="text-center">
-            <div class="card-body">
-                <h1>2. How many provices in cambodia? <span>2pt</span></h1>
-                <input type="radio" id="provices1" name="provices" value="5">
-                <label for="provices1">25</label><br>
-                <input type="radio" id="provices2" name="provices" value="5">
-                <label for="provices2">32</label><br>
-                <input type="radio" id="provices3" name="provices" value="5">
-                <label for="provices3">24</label><br>
-                <input type="radio" id="provices4" name="provices" value="5">
-                <label for="provices4">26</label><br>
-            </div>
-            <button class="btn btn-primary" id="btn-submit">Submit</button>
-        </div>
-    </div>
-    <div class="contain2" style="display: none;">
-        <div class="back-add">
-            <button class="btn btn-primary" id="btn-back">BACK</button>
-            <button class="btn btn-primary" id="btn-add">ADD+</button>
-        </div>
-        <div class="card-create">
-            <div class="question">
-                <h2><input type="text" name="question" id="h1" value="1."></h2>
-                <div class="edit-delete">
-                    <button class="btn btn-primary">edit</button>
-                    <button class="btn btn-danger">delete</button>
-                </div>
-            </div>
-            <input type="text"  id="text1" value="A"><br>
-            <input type="text" class="mt-3" id="text2" value="B"><br>
-            <input type="text" class="mt-3" id="text3" value="C"><br>
-            <input type="text" class="mt-3" id="text4" value="D">
-        </div>
-        <div class="card-create1">
-            <div class="question">
-                <h2><input type="text" name="question" id="h2" value="2."></h2>
-                <div class="edit-delete">
-                    <button class="btn btn-primary">edit</button>
-                    <button class="btn btn-danger">delete</button>
-                </div>
-            </div>
-            <input type="text"  id="text1" value="A"><br>
-            <input type="text" class="mt-3" id="text2" value="B"><br>
-            <input type="text" class="mt-3" id="text3" value="C"><br>
-            <input type="text" class="mt-3" id="text4" value="D"><br>
-        </div>  
-    </div>
-    <div class="contain3" style="display: none;">
-        <div class="score">
-            <h2>SCORE</h2>
-            <h4>GOOD</h4>
-            <p>4pt</p>
-        </div>
-        <button class="btn btn-primary" id="back">BACK</button>
     </div>
     <script src="js/app.js"></script>
 </body>
