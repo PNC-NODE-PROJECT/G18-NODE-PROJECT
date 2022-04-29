@@ -14,18 +14,6 @@ body{
     align-content: center;
     justify-content: center;
 }
-/* #start:hover(){
-    top: 40%;
-    background-color: blue;
-    color: #fff;
-    border: none;
-}
-#create:hover(){
-    top: 40%;
-    background-color: blue;
-    color: #fff;
-    border: none;
-} */
 
 .container-fluid {
     width: 60%;
@@ -62,70 +50,22 @@ body{
 }
 
 #btn-submit {
-    /* position: relative;
-    right: 0px; */
     margin-left: 60px;
 }
 .container-fluid  .card-question .card  .form-control{
     width: auto;
 
 }
-/* #btn-next:hover(){
-    top: 40%;
-    background-color: blue;
+.result{
+    width: 40%;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+    margin: 60px auto;
     color: #fff;
-    border: none;
-}  */
-
-/* .card-create {
-    width: 50%;
-    height: 40vh;
-    text-align: center;
-    box-shadow: 1px 2px 8px 2px #aaaa;
-    margin: 20px auto;
-    padding-top: 12px;
+    background: rgb(78, 125, 208); 
+    border-radius: 12px;
 }
-
-.card-create1 {
-    width: 50%;
-    text-align: center;
-    box-shadow: 1px 2px 8px 2px #aaaa;
-    margin: 20px auto;
-    padding-top: 12px;
-    height: 48vh;
-} */
-/* 
-input {
-    margin-top: 12px;
+#btn-score{
+    margin-right: 230px; 
 }
-
-#btn-add {
-    position: relative;
-    left: 230px;
-}
-
-#btn-add:hover(){
-    top: 20%;
-    background-color: blue;
-    color: #fff;
-    border: none;
-}
-.back-add{
-    text-align: center;
-    margin-right: 150px;
-}
-.contain2{
-    padding-top: 18px;
-} */
-/* #back{
-    position: relative;
-    right:150px ;
-} */
-/* .contain3{
-    width: 30%;
-    text-align: center;
-    box-shadow: 1px 2px 8px 2px #aaaa;
-    margin: 20px auto;
-    padding-top: 12px;
-    height: 32vh;
-} */
