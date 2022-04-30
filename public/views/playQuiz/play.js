@@ -105,7 +105,7 @@ function submitQuestion(){
         for (let index=0;index<arrayAnswer.length ;index++){
             let answer =dataServer[index].correct;
             if (answer === arrayAnswer[index]){
-                score ++;
+                score += 10;
             }
         }
     showResult();
@@ -114,19 +114,28 @@ function submitQuestion(){
 function showResult(){
     document.querySelector('.score').textContent = score;
     document.querySelector(".result").style.display = "block";
-    displayQuestion.style.display = "none"
+    displayQuestion.style.display = "none";
+
+    
 }
 
-// function backTOplay(){
-//     show(getAllQuizzes);
-// }
+function goodScore(){
+    
+}
+
+function badScore(){
+
+}
+
+
 
 let currentQuiz = 0
 let score = 0
 let arrayAnswer = []
 
 let back_score = document.querySelector("#btn-score");
-// back_score.addEventListener("click",backTOplay);
+let good = document.querySelector(".good");
+let bad = document.querySelector(".bad");
 
 let card_question = document.querySelector(".card-question");
 let submit = document.querySelector('#btn-submit');
