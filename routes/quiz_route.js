@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 })
 
 // create question 
-router.post("/", (req, res) => {
+router.post("/add-question/", (req, res) => {
     let quizes_app = readFile("app_quiz.json");
     let questions = req.body.question;
     let answers = req.body.answers;

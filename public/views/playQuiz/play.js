@@ -115,18 +115,12 @@ function showResult(){
     document.querySelector('.score').textContent = score;
     document.querySelector(".result").style.display = "block";
     displayQuestion.style.display = "none";
-    if ((score/dataServer.length))
+
 
     
 }
 
-function goodScore(){
-    
-}
 
-function badScore(){
-
-}
 
 
 

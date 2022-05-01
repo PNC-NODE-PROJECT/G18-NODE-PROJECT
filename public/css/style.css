@@ -1,4 +1,4 @@
-body{
+body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -11,14 +11,15 @@ body{
     transition: all ease-in-out 1s;
     text-decoration: none;
 }
+
 .container {
     display: flex;
     justify-content: center;
     margin: 160px auto;
     height: 220px;
-    /* background: #000; */
 }
-.container .card{
+
+.container .card {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -31,30 +32,26 @@ body{
     padding: 10px 12px;
     background: rgba(186, 180, 180, 0.39);
     border-radius: 4px;
-
 }
-.question{
+
+.question {
     display: flex;
     justify-content: center;
 }
-.edit-delete{
+
+.edit-delete {
     margin-left: 32px;
 }
 
-.container-fluid  .card-question {
+.container-fluid .card-question {
     width: 80%;
     margin: auto;
 }
-/* .container-fluid  .card-question .card{
-    background: #000;
-    box-sizing: border-box;
-} */
-.container-fluid  .card-question .card .card-header{
+
+.container-fluid .card-question .card .card-header {
     width: 100%;
     text-align: center;
-    /* box-shadow: 1px 2px 8px 2px #aaaa; */
     margin: auto;
-    /* background: rgb(4, 121, 211); */
     color: #fff;
     background: rgb(25, 96, 219);
 }
@@ -62,20 +59,34 @@ body{
 #btn-submit {
     margin-left: 60px;
 }
-.container-fluid  .card-question .card  .form-control{
-    width: auto;
 
+.container-fluid .card-question .card .form-control {
+    width: auto;
 }
-.result{
+
+.result {
     width: 40%;
     height: auto;
     text-align: center;
     padding: 20px;
     margin: 60px auto;
     color: #fff;
-    background: rgb(78, 125, 208); 
+    background: rgb(78, 125, 208);
     border-radius: 12px;
 }
-#btn-score{
-    margin-right: 230px; 
+
+#btn-score {
+    margin-right: 230px;
+}
+
+.add {
+    margin-left: 425px;
+    padding-top: 12px;
+}
+
+.add-question {
+    width: 50%;
+    margin: 30px auto;
+    background: rgba(214, 208, 208, 0.347);
+    padding: 22px 0;
 }
