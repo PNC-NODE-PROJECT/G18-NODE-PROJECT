@@ -21,10 +21,10 @@ function domForm (allquestion){
 
         let card_question = document.createElement("div");
         card_question.className = "card-question m-auto";
-
+        card_question.id = question["id"];
         let card = document.createElement("div");
         card.className = "card mt-4";
-        card.id = question["id"];
+        // card.id = question["id"];
 
         let card_header = document.createElement("div");
         card_header.className = "card-header";
@@ -39,12 +39,7 @@ function domForm (allquestion){
         let answer1 = document.createElement("label");
         answer1.className = "m-1";
         answer1.textContent = question["answers"]["A"];
-        // let radio1 = document.createElement("input");
-        // radio1.type = "radio"
-        // radio1.id = "provices1";
-        // radio1.name = "provices";
-        // radio1.value = 5;
-        // form_control1.appendChild(radio1);
+
         form_control1.appendChild(answer1);
         card.appendChild(form_control1);
 
@@ -53,12 +48,7 @@ function domForm (allquestion){
         let answer2 = document.createElement("label");
         answer2.className = "m-1";
         answer2.textContent = question["answers"]["B"];
-        // let radio2 = document.createElement("input");
-        // radio2.type = "radio"
-        // radio2.id = "provices2";
-        // radio2.name = "provices";
-        // radio2.value = 5;
-        // form_control2.appendChild(radio2);
+
         form_control2.appendChild(answer2);
         card.appendChild(form_control2);
 
@@ -67,12 +57,7 @@ function domForm (allquestion){
         let answer3 = document.createElement("label");
         answer3.className = "m-1";
         answer3.textContent = question["answers"]["C"];
-        // let radio3 = document.createElement("input");
-        // radio3.type = "radio"
-        // radio3.id = "provices3";
-        // radio3.name = "provices";
-        // radio3.value = 5;
-        // form_control3.appendChild(radio3);
+
         form_control3.appendChild(answer3);
         card.appendChild(form_control3);
 
@@ -81,12 +66,6 @@ function domForm (allquestion){
         let answer4 = document.createElement("label");
         answer4.className = "m-1";
         answer4.textContent = question["answers"]["D"];
-        // let radio4 = document.createElement("input");
-        // radio4.type = "radio"
-        // radio4.id = "provices4";
-        // radio4.name = "provices";
-        // radio4.value = 5;
-        // form_control4.appendChild(radio4);
         form_control4.appendChild(answer4);
         card.appendChild(form_control4);
 
@@ -105,6 +84,10 @@ function domForm (allquestion){
         card_question.appendChild(btnDelete);
         container.appendChild(card_question);
     }
+    let btnDeletes = document.querySelectorAll("#delete");
+    btnDeletes.forEach(btn => {
+        btn.addEventListener("click",deleteQuestions);
+    });
 }
 
 
@@ -265,14 +248,26 @@ function displayEditQuestion() {
         card_question.appendChild(card);
         card_question.appendChild(btnedit);
         card_question.appendChild(btnDelete);
-        elementAnswer.appendChild(card_question)
+        elementAnswer.appendChild(card_question);
     }
+    
+
 }
   
-
+function deleteQuestions(event){
+    event.preventDefault();
+    if (event.target.id === "delete"){
+        let id = event.target.parentElement.id;
+        axios.delete("/api/items/" +id).then((result)=>{
+            alert("success")
+        })
+        dataEdit();
+    }
+}
+// deleteQuestions(e);
 // GLOBAL VARIABLE
 let answerList = [];
 let button = document.getElementById("create");
 button.addEventListener("click", addQuestion);
-console.log(button);
+// console.log(button);
 let container = document.querySelector(".container-fluid");
