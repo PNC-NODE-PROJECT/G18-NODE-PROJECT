@@ -39,13 +39,14 @@ router.delete("/:id", (req, res) => {
     let quizes_app = readFile("app_quiz.json");
     let id = req.params.id
     let index = quizes_app.findIndex(quiz => quiz.id === id);
+    console.log(index);
     if (index !== -1) {
         quizes_app.splice(index, 1);
         res.status(200).send({ "message": "Delete item is successfully." });
     } else {
         res.status(404).send({ "message": "Not found of item." });
     }
-    writeFile("./data/app_quiz.json", quizes_app);
+    writeFile("app_quiz.json", quizes_app);
 })
 
 // Get items to update-------------------------------------------

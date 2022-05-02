@@ -1,7 +1,7 @@
 
 // FUNCTION OF GET DATA FROM SERVER TO DISPLAY ON BROWSER
 function dataEdit() {
-    axios.get("/api/items/").then((result) => {
+    axios.get("http://localhost:80/api/items").then((result) => {
         let questions = result.data;
         domForm(questions);
     })  
@@ -10,7 +10,7 @@ dataEdit();
 
 function AddQuiz(newQuiz){
     console.log(newQuiz);
-    axios.post("/api/items/add-question/",newQuiz).then(dataEdit());
+    axios.post("http://localhost:80/api/items/add-question/",newQuiz).then(dataEdit());
 }
 
 function domForm (allquestion){
@@ -78,16 +78,17 @@ function domForm (allquestion){
         btnDelete.id = "delete";
         btnDelete.className = "btn btn-danger mt-1 m-1";
         btnDelete.textContent = "Delete";
+        btnDelete.addEventListener("click",deleteQuestions);
 
         card_question.appendChild(card);
         card_question.appendChild(btnedit);
         card_question.appendChild(btnDelete);
         container.appendChild(card_question);
     }
-    let btnDeletes = document.querySelectorAll("#delete");
-    btnDeletes.forEach(btn => {
-        btn.addEventListener("click",deleteQuestions);
-    });
+    // let btnDeletes = document.querySelectorAll("#delete");
+    // btnDeletes.forEach(btn => {
+    //     btn.addEventListener("click",deleteQuestions);
+    // });
 }
 
 
@@ -258,13 +259,14 @@ function deleteQuestions(event){
     event.preventDefault();
     if (event.target.id === "delete"){
         let id = event.target.parentElement.id;
+        console.log(id)
         axios.delete("/api/items/" +id).then((result)=>{
             alert("success")
         })
         dataEdit();
     }
 }
-// deleteQuestions(e);
+// deleteQuestions();
 // GLOBAL VARIABLE
 let answerList = [];
 let button = document.getElementById("create");
