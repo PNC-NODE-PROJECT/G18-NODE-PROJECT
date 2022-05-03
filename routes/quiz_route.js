@@ -7,14 +7,16 @@ const { v4: uuidv4 } = require("uuid");
 let readFile = (filename) => JSON.parse(fs.readFileSync(filename));
 let writeFile = (filename, data) => fs.writeFileSync(filename, JSON.stringify(data));
 
-// Get all items-------------------------------------------------
+
+// GET ALL ITEMS 
 router.get("/", (req, res) => {
     let quizes_app = readFile("app_quiz.json");
     res.send(quizes_app);
 })
 
-// create question 
-router.post("/add-question/", (req, res) => {
+
+// CREATE QUESTION
+router.post("/add-question", (req, res) => {
     let quizes_app = readFile("app_quiz.json");
     let questions = req.body.question;
     let answers = req.body.answers;
@@ -34,7 +36,8 @@ router.post("/add-question/", (req, res) => {
     }
 })
 
-// Delete question-------------------------------------------------
+
+// DELETE QUESTION
 router.delete("/:id", (req, res) => {
     let quizes_app = readFile("app_quiz.json");
     let id = req.params.id
@@ -49,14 +52,19 @@ router.delete("/:id", (req, res) => {
     writeFile("app_quiz.json", quizes_app);
 })
 
-// Get items to update-------------------------------------------
-router.patch("/:id", (req, res) => {
+
+// GET ITEM TO UPDATE
+router.put("/:id", (req, res) => {
+    let quizes_app = readFile("app_quiz.json");
+    console.log(req.body);
+
     let id = req.params.id;
     let index = quizes_app.findIndex(quiz => quiz.id === id);
+    console.log(index);
     if (index !== -1) {
         let quiz = quizes_app[index];
-        if (req.body.questions !== undefined) {
-            item.questions = req.body.questions;
+        if (req.body.question !== undefined) {
+            quiz.question = req.body.question;
         }
         if (req.body.answers !== undefined) {
             quiz.answers = req.body.answers;

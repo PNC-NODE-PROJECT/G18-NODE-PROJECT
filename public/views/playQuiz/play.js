@@ -1,3 +1,4 @@
+
 // FUNCTION GETDATASERVER FROM SERVER
 let dataServer = "";
 function getdataServer() {
@@ -7,6 +8,7 @@ function getdataServer() {
         refreshDom(dataServer)
     })
 }
+
 
 // FUNCTION REFRESHDOM FROM DATASERVER
 function refreshDom(dataServer) {
@@ -23,6 +25,7 @@ function refreshDom(dataServer) {
         card_header.appendChild(h5)
         card.appendChild(card_header);
         
+
         // CREATE ANSWER CHOICE RADIO TYPE
         let card_body = document.createElement("div");
         card_body.className = "card-body";
@@ -84,23 +87,25 @@ function refreshDom(dataServer) {
         question ++;
     }
 }
+
+
 //FUNCTION SUBMIT
-function submitQuestion(){
+function submitQuestion() {
     let answers = document.querySelectorAll("input[type=radio]");
-    for (let answer of answers){
+    for (let answer of answers) {
         if(answer.checked){
             arrayAnswer.push(answer.value);
         }
     }
 
-    for (let index=0;index<arrayAnswer.length ;index++){
+    for (let index=0;index<arrayAnswer.length ;index++) {
         let answer =dataServer[index].correct;
-        if (answer === arrayAnswer[index]){
+        if (answer === arrayAnswer[index]) {
             score += 10;
         }
     }
 
-    if (arrayAnswer.length === dataServer.length){
+    if (arrayAnswer.length === dataServer.length) {
         showResult();
     } else{
         arrayAnswer = [];
@@ -108,8 +113,9 @@ function submitQuestion(){
     }
 }
 
+
 // FUNCTION SHOW RESULT
-function showResult(){
+function showResult() {
     document.querySelector(".score").textContent = parseInt((score/dataServer.length)*10) + "%";
     document.querySelector(".result").style.display = "block";
     displayQuestion.style.display = "none";
@@ -122,9 +128,11 @@ function showResult(){
     }
 }
 
-let currentQuiz = 0
-let score = 0
-let arrayAnswer = []
+
+let currentQuiz = 0;
+let score = 0;
+let arrayAnswer = [];
+
 
 // MAIN CODE
 let back_score = document.querySelector("#btn-score");
