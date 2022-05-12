@@ -2,7 +2,7 @@
 // FUNCTION OF GET DATA FROM SERVER TO DISPLAY ON BROWSER
 let questions = [];
 function dataEdit() {
-    axios.get("http://localhost:80/api/items").then((result) => {
+    axios.get("/api/items").then((result) => {
         questions = result.data;
         domForm(questions);
     })  
@@ -10,7 +10,7 @@ function dataEdit() {
 dataEdit();
 
 function AddQuiz(newQuiz) {
-    axios.post("http://localhost:80/api/items/add-question/", newQuiz)
+    axios.post("/api/items/add-question/", newQuiz)
     .then(dataEdit());
 }
 
@@ -119,12 +119,10 @@ const btnAdd = document.getElementById("add");
 btnAdd.addEventListener("click", showDomCreate);
 
 function addQuestion() {
-    isAdded = true;
-
 
     // GET ANSWER FROM INPUT
     let data ={};
-    if (question.value.length === 0 || answer1.value.length === 0 || answer2.value.length === 0 || answer3.value.length === 0 || answer4.value.length === 0) {
+    if (question.value.length === 0 || answer1.value.length === 0 || answer2.value.length === 0 || answer3.value.length === 0 || answer4.value.length === 0 || correctAnswer.value.length === 0) {
         alert("You missing")
     } else {
         data = { question: question.value, answers: {"A":answer1.value,"B":answer2.value,"C" :answer3.value,"D": answer4.value}, correct :correctAnswer.value};
@@ -275,7 +273,7 @@ function save(e){
 //FUNCTION SAVE QUESTION
 function questionSave(id) {
     let body = {"question": question.value, "answers":{"A": answer1.value,"B": answer2.value, "C":answer3.value, "D": answer4.value}};
-    axios.put("http://localhost:80/api/items/" + id, body)
+    axios.put("/api/items/" + id, body)
     .then(dataEdit())
 }
   

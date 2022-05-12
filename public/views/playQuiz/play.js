@@ -2,7 +2,7 @@
 // FUNCTION GETDATASERVER FROM SERVER
 let dataServer = "";
 function getdataServer() {
-    axios.get("http://localhost:80/api/items/").then((result) => {
+    axios.get("/api/items/").then((result) => {
         dataServer = result.data;
         console.log(dataServer);
         refreshDom(dataServer)
